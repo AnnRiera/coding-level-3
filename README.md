@@ -1,5 +1,39 @@
 # Bienvenido al coding-interview-backend-level-3
 
+## How to
+
+### Configurar Prisma
+Para poder ejecutar el proyecto se requiere levantar la imagen de postgres en Docker, el ejemplo del string connection se encuentra disponible en el archivo `.env.example`.
+
+***NOTA***: Antes de poder ejecutar todo, la base de datos debe estar creada.
+
+Para generar el schema de Prisma se deben ejecutar los siguientes comandos:
+
+```
+npm run prisma:init
+```
+***NOTA***: el comando anterior solamente funciona si el schema de Prisma no está configurado previamente. En este caso en particular, el schema ya está creado, por lo que este comando puede ser ignorado.
+
+Este sirve para crear el schema. Una vez creado el esquema y teniendo ya creada la base de datos, se debe ejecutar el siguiente comando:
+
+```
+npm run prisma:migrate
+```
+
+Esta creará la tabla con su respectiva estructura y creará la primera migración de esta.
+
+
+### Correr el proyecto
+Para correr el proyecto de forma local se debe tener en cuenta lo siguiente: dado a un tema técnico con Hapi y Joi, para poder utilizar la API se debe añadir en el `package.json` lo siguiente:
+
+```
+  "type": "module"
+```
+
+Si se desea ejecutar los tests, sólo hace falta eliminar la línea anterior y se podrán ejecutar los tests sin problemas.
+
+***NOTA***: actualmente se encuentra configurado para ejecutar los tests, es decir, sin el `"type": "module"`.
+
 ## Descripción
 Este proyecto es una API REST que permite realizar operaciones CRUD sobre una entidad de tipo `Item`.
 
@@ -32,23 +66,3 @@ Tu tarea es completar la implementación de toda la funcionalidad de forma tal d
 7. PROFIT
 
 ### Cualquier duda contactarme a https://www.linkedin.com/in/andreujuan/
-
-## How to
-Para poder ejecutar el proyecto se requiere levantar la imagen de postgres en Docker, el ejemplo del string connection se encuentra disponible en el archivo `.env.example`.
-
-NOTA: Antes de poder ejecutar todo, la base de datos debe estar creada.
-
-Para generar el schema de Prisma se deben ejecutar los siguientes comandos:
-
-````
-npm run prisma:init
-````
-NOTA: el comando anterior solamente funciona si el schema de Prisma no está configurado previamente. En este caso en particular, el schema ya está creado, por lo que este comando puede ser ignorado.
-
-Este sirve para crear el schema. Una vez creado el esquema y teniendo ya creada la base de datos, se debe ejecutar el siguiente comando:
-
-````
-npm run prisma:migrate
-````
-
-Esta creará la tabla con su respectiva estructura y creará la primera migración de esta.
