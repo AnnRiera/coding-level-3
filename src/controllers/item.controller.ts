@@ -2,7 +2,6 @@ import { Request, ResponseObject, ResponseToolkit } from '@hapi/hapi';
 import { ItemsService } from '../services/item.service';
 import { ICreateItem, IItem } from '../interfaces/item.interface';
 import { validateBodySchema } from '../validators/schemas/main.schema';
-//import { validateCreateRoute, validateIdRoute } from '../validators/main.validator';
 import { Validator } from '../validators/main.validator';
 
 const itemsService = new ItemsService();
@@ -76,7 +75,6 @@ class ItemsController {
         try {
             const { error } = validateBodySchema.validate(req.payload);
             if (error) {
-                //const errors = validateCreateRoute(req);
                 const errors = validator.validateBody(req, validateBodySchema);
                 return res.response({ errors }).code(400);
             }

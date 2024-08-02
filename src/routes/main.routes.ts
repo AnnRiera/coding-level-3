@@ -60,8 +60,3 @@ export const defineRoutes = (server: Server) => {
         }
     });
 }
-
-/**
- * 
- * 
- */
