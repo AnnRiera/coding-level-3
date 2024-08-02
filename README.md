@@ -32,3 +32,23 @@ Tu tarea es completar la implementación de toda la funcionalidad de forma tal d
 7. PROFIT
 
 ### Cualquier duda contactarme a https://www.linkedin.com/in/andreujuan/
+
+## How to
+Para poder ejecutar el proyecto se requiere levantar la imagen de postgres en Docker, el ejemplo del string connection se encuentra disponible en el archivo `.env.example`.
+
+NOTA: Antes de poder ejecutar todo, la base de datos debe estar creada.
+
+Para generar el schema de Prisma se deben ejecutar los siguientes comandos:
+
+````
+npm run prisma:init
+````
+NOTA: el comando anterior solamente funciona si el schema de Prisma no está configurado previamente. En este caso en particular, el schema ya está creado, por lo que este comando puede ser ignorado.
+
+Este sirve para crear el schema. Una vez creado el esquema y teniendo ya creada la base de datos, se debe ejecutar el siguiente comando:
+
+````
+npm run prisma:migrate
+````
+
+Esta creará la tabla con su respectiva estructura y creará la primera migración de esta.

@@ -1,2 +1,11 @@
 node_modules
 mock.ts
+
+# Environment
+.env
+
+# Prisma related
+prisma/migrations
+
+# Dist folder
+dist
